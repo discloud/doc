@@ -1,5 +1,6 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import Image from 'next/image';
+import { i18n } from './i18n';
 
 /**
  * Shared layout configurations
@@ -8,8 +9,9 @@ import Image from 'next/image';
  * Home Layout: app/(home)/layout.tsx
  * Docs Layout: app/docs/layout.tsx
  */
-export function baseOptions(): BaseLayoutProps {
+export function baseOptions(_lang: string): BaseLayoutProps {
   return {
+    i18n,
     nav: {
       title: (
         <>
