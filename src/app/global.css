@@ -24,3 +24,42 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background-color: #45be6c;
 }
+
+.dark {
+  --color-fd-primary: #45be6c;
+	--color-fd-background: #0B0B0B;
+	--color-fd-card: #0F0F0F;
+	/* --color-fd-card-foreground: #ff0000; */
+  --color-fd-border: #181818;
+  --color-fd-popover: #0F0F0F;
+	/* --color-fd-popover-foreground: #ff0000; */
+
+	--color-fd-secondary: #1e1e1e;
+	/* --color-fd-secondary-foreground: #ff0000; */
+
+	/* --color-fd-muted: #ff0000; */
+	/* --color-fd-muted-foreground: #ff0000; */
+
+	--color-fd-accent: #2f2f2f;
+	/* --color-fd-accent-foreground: #ff0000; */
+}
+
+/* Ligth theme */
+:root {
+  --color-fd-primary: #45be6c;
+	/* --color-fd-background: #ff0000; */
+	/* --color-fd-card: #ff0000; */
+	/* --color-fd-card-foreground: #ff0000; */
+  /* --color-fd-border: #ff0000; */
+  /* --color-fd-popover: #ff0000; */
+	/* --color-fd-popover-foreground: #ff0000; */
+
+	/* --color-fd-secondary: #ff0000; */
+	/* --color-fd-secondary-foreground: #ff0000; */
+
+	/* --color-fd-muted: #ff0000; */
+	/* --color-fd-muted-foreground: #ff0000; */
+
+	/* --color-fd-accent: #ff0000; */
+	/* --color-fd-accent-foreground: #ff0000; */
+}
