@@ -7,7 +7,7 @@ const config = {
   reactStrictMode: true,
   async rewrites() {
     return [{ source: "/", destination: "/docs" }];
-  },
+  }
 };
 
 export default withMDX(config);

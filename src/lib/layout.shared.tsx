@@ -13,6 +13,7 @@ export function baseOptions(_lang: string): BaseLayoutProps {
   return {
     i18n,
     nav: {
+      enabled: true,
       title: (
         <>
           <Image
@@ -27,5 +28,6 @@ export function baseOptions(_lang: string): BaseLayoutProps {
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
     links: [],
+    
   };
 }
