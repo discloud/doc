@@ -1,5 +1,6 @@
 {
     "title": "Libraries",
     "root": true,
-    "pages": ["libs", "nodejs", "python"]
+    "pages": ["libs", "nodejs", "python"],
+    "icon": "IoLibrary"
 }

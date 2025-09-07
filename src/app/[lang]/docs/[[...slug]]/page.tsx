@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import { getMDXComponents } from "@/mdx-components";
 import * as LucideIcons from "lucide-react";
+import icons from "@/lib/icon";
 
 export default async function Page(props: PageProps<"/[lang]/docs/[[...slug]]">) {
   const params = await props.params;
@@ -14,12 +15,12 @@ export default async function Page(props: PageProps<"/[lang]/docs/[[...slug]]">)
 
   const MDXContent = page.data.body;
 
-  const IconComponent = page.data.icon ? (LucideIcons as any)[page.data.icon] : null;
+  const IconComponent = page.data.icon ? icons[page.data.icon] : null;
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
       <DocsTitle>
-        {IconComponent && <IconComponent className="inline" size={24} />} {page.data.title}
+        {IconComponent && <IconComponent className="inline" size={32} />} {page.data.title}
       </DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
