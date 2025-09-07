@@ -29,12 +29,12 @@ const AccordionWithEmote = (props: any) => {
   );
 };
 
-export function getMDXComponents(components?: MDXComponents): MDXComponents {
+export function getMDXComponents(lang: "pt" | "en" = "pt", components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
     Accordions,
     Accordion: AccordionWithEmote,
-    APIPage: (props) => <APIPage {...openapi.getAPIPageProps(props)} />,
+    APIPage: (props) => <APIPage {...openapi[lang].getAPIPageProps(props)} />,
     ...components,
   };
 }

@@ -1,6 +1,10 @@
 import { createOpenAPI } from "fumadocs-openapi/server";
 
-export const openapi = createOpenAPI({
-  // the OpenAPI schema, you can also give it an external URL.
-  input: ["./unkey.json"],
-});
+export const openapi = {
+  pt: createOpenAPI({
+    input: ["./scripts/openapi-pt.json"],
+  }),
+  en: createOpenAPI({
+    input: ["./scripts/openapi-en.json"],
+  })
+}

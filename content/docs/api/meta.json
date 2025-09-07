@@ -1,4 +1,6 @@
 {
     "title": "API",
-    "root": true
+    "description": "Documentação da API da Discloud",
+    "root": true,
+    "pages": ["home", "...(generated)"]
 }

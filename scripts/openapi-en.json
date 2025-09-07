@@ -1,0 +1,851 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Discloud API",
+    "description": "Welcome to the DisCloud API! Feel free to query and try out all the routes of our API on this page!",
+    "termsOfService": "https://discloudbot.com/legal/terms",
+    "version": "v2"
+  },
+  "servers": [
+    {
+      "url": "https://api.discloud.app/v2"
+    }
+  ],
+  "tags": [
+    {
+      "name": "User",
+      "description": "User Information"
+    },
+    {
+      "name": "Upload",
+      "description": "Application Uploads"
+    },
+    {
+      "name": "App",
+      "description": "APPs Management Routes"
+    },
+    {
+      "name": "Team Manager",
+      "description": "Team Management Routes"
+    },
+    {
+      "name": "Team",
+      "description": "Team Application Management Routes"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User Info",
+        "description": "Provided token user information",
+        "operationId": "getUser",
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/upload": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "summary": "App Upload",
+        "description": "Upload an application",
+        "operationId": "uploadApp",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/sendFile"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Info",
+        "description": "Get application information",
+        "operationId": "getInfoApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/status": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Status",
+        "description": "Get application status information",
+        "operationId": "getStatusApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/logs": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Logs",
+        "description": "Get the application logs",
+        "operationId": "getLogsApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/backup": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Backup",
+        "description": "Obtain application backup",
+        "operationId": "getBackupApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/locale/{locale}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Set locale",
+        "description": "Change the user language of the given token",
+        "operationId": "setLocale",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "path",
+            "description": "Linguagem pretendida",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "pt-BR",
+                "en-US"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/start": {
+      "put": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Start",
+        "description": "Start an Application",
+        "operationId": "startApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/restart": {
+      "put": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Restart",
+        "description": "Restart an application",
+        "operationId": "restartApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/stop": {
+      "put": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Stop",
+        "description": "Stop an application",
+        "operationId": "stopApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/ram": {
+      "put": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App RAM",
+        "description": "Change the application RAM",
+        "operationId": "setRamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/setRam"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/commit": {
+      "put": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Commit",
+        "description": "Commit to an application (all is not allowed)",
+        "operationId": "commitApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/sendFile"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/delete": {
+      "delete": {
+        "tags": [
+          "App"
+        ],
+        "summary": "App Delete",
+        "description": "Delete an application",
+        "operationId": "deleteApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{all}/getApps": {
+      "delete": {
+        "tags": [
+          "App"
+        ],
+        "summary": "List all apps",
+        "description": "List all apps",
+        "operationId": "getApps",
+        "parameters": [
+          {
+            "name": "all",
+            "in": "path",
+            "description": "Just the parameter \"all\" (without quotes) and support, this route returns id and name of all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/team": {
+      "get": {
+        "tags": [
+          "Team Manager"
+        ],
+        "summary": "Get App Team",
+        "description": "Get team information from an application",
+        "operationId": "getTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Team Manager"
+        ],
+        "summary": "Adds a member to the application Team",
+        "description": "Adds a member to the application Team",
+        "operationId": "createTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/teamManager"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+      ,
+      "put": {
+        "tags": [
+          "Team Manager"
+        ],
+        "summary": "Edit the permissions of a Team member",
+        "description": "Edit the permissions of a Team member",
+        "operationId": "editTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/teamManager"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/app/{appID}/team/{modID}": {
+      "delete": {
+        "tags": [
+          "Team Manager"
+        ],
+        "summary": "Remove a member",
+        "description": "Removes a Team Member",
+        "operationId": "deleteTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "modID",
+            "in": "path",
+            "description": "ID do mod",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "Get Team Apps",
+        "description": "Get all Team applications that the token owner has access to",
+        "operationId": "getTeam",
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{ownerID}/getMods": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "Get All Your Moderators",
+        "description": "Get all moderators you have registered",
+        "operationId": "getMods",
+        "parameters": [
+          {
+            "name": "ownerID",
+            "in": "path",
+            "description": "App Owner ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/start": {
+      "put": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "App Start",
+        "description": "Application ID or \"all\" (without quotes) for all apps",
+        "operationId": "startTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/restart": {
+      "put": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "App Restart",
+        "description": "Application ID or \"all\" (without quotes) for all apps",
+        "operationId": "restartTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/stop": {
+      "put": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "App Stop",
+        "description": "Application ID or \"all\" (without quotes) for all apps",
+        "operationId": "stopTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/commit": {
+      "put": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "App Commit",
+        "description": "Commit to an application (all is not allowed)",
+        "operationId": "commitTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/sendFile"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/backup": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "App Backup",
+        "description": "Obtain application backup",
+        "operationId": "getBackupTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/logs": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "Logs App",
+        "description": "Get the application logs",
+        "operationId": "getLogsTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/ram": {
+      "put": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "Change App RAM",
+        "description": "Change the amount of RAM for an Application",
+        "operationId": "setRamTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/setRam"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/team/{appID}/status": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "summary": "Status App",
+        "description": "Get application status information",
+        "operationId": "getStatusTeamApp",
+        "parameters": [
+          {
+            "name": "appID",
+            "in": "path",
+            "description": "Application ID or \"all\" (without quotes) for all apps",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "api-token": []
+    }
+  ],
+  "components": {
+    "requestBodies": {
+      "sendFile": {
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "required": [
+                "file"
+              ],
+              "type": "object",
+              "properties": {
+                "file": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      },
+      "setRam": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "required": [
+                "ramMB"
+              ],
+              "type": "object",
+              "properties": {
+                "ramMB": {
+                  "type": "number",
+                  "minimum": 100
+                }
+              }
+            }
+          }
+        }
+      },
+      "teamManager": {
+        "description": "Perms:[\"start_app\",\"stop_app\",\"restart_app\",\"logs_app\",\"commit_app\",\"edit_ram\",\"backup_app\",\"status_app\"] ",
+        "content": {
+          "application/json": {
+            "schema": {
+              "required": [
+                "modID",
+                "perms"
+              ],
+              "type": "object",
+              "properties": {
+                "modID": {
+                  "type": "string"
+                },
+                "perms": {
+                  "type": "array",
+                  "items":{
+                    "type": "string",
+                    "enum": [
+                      "start_app",
+                      "stop_app",
+                      "restart_app",
+                      "logs_app",
+                      "commit_app",
+                      "edit_ram",
+                      "backup_app",
+                      "status_app"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "api-token": {
+        "type": "apiKey",
+        "name": "api-token",
+        "in": "header"
+      }
+    }
+  }
+}

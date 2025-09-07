@@ -25,7 +25,7 @@ export default async function Page(props: PageProps<"/[lang]/docs/[[...slug]]">)
       <DocsBody>
         <MDXContent
           components={{
-            ...getMDXComponents({
+            ...getMDXComponents(params.lang as "pt" | "en", {
               a: createRelativeLink(source, page),
             }),
           }}
