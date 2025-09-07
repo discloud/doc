@@ -1,6 +1,7 @@
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
+import { Card, Cards } from "fumadocs-ui/components/card";
 import { ClipboardCheck, LibraryBig, PersonStanding, Search } from "lucide-react";
 import { APIPage } from "fumadocs-openapi/ui";
 import { openapi } from "./lib/openapi";
@@ -35,6 +36,7 @@ export function getMDXComponents(lang: "pt" | "en" = "pt", components?: MDXCompo
     Accordions,
     Accordion: AccordionWithEmote,
     APIPage: (props) => <APIPage {...openapi[lang].getAPIPageProps(props)} />,
+    Card, Cards,
     ...components,
   };
 }

@@ -1,5 +1,5 @@
 {
-    "title": "Bibliotecas",
+    "title": "Libraries",
     "root": true,
     "pages": ["libs", "nodejs", "python"]
 }

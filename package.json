@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "genopenapi": "bun run ./scripts/openapi/gen.ts"
   },
   "dependencies": {
     "fumadocs-core": "^15.7.10",
