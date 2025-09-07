@@ -2,6 +2,8 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { ClipboardCheck, LibraryBig, PersonStanding, Search } from "lucide-react";
+import { APIPage } from "fumadocs-openapi/ui";
+import { openapi } from "./lib/openapi";
 
 const ICONS_MAP = {
   ClipboardCheck,
@@ -32,6 +34,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...defaultMdxComponents,
     Accordions,
     Accordion: AccordionWithEmote,
+    APIPage: (props) => <APIPage {...openapi.getAPIPageProps(props)} />,
     ...components,
   };
 }
