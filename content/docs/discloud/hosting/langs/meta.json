@@ -1,0 +1,14 @@
+{
+    "title": "Linguagens",
+    "icon": "FaCode",
+    "pages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "rust",
+        "ruby",
+        "php",
+        "go"
+    ]
+}

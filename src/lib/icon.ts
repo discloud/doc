@@ -16,6 +16,7 @@ import * as ri from "react-icons/ri";
 import * as si from "react-icons/si";
 import * as tb from "react-icons/tb";
 import * as ti from "react-icons/ti";
+import * as di from "react-icons/di";
 
 const icons: Record<string, IconType> = {};
 const defaults = {
@@ -30,7 +31,7 @@ const defaults = {
 Object.assign(
     icons, defaults, ai, ti, bs, 
     fa, hi, hi2, ri, io, io5, md, tb, bi, 
-    si, pi, cg, gr, fa6
+    si, pi, cg, gr, fa6, di
 );
 
 export default icons;

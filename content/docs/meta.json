@@ -1,3 +1,8 @@
 {
-    "pages": ["discloud", "api", "lib"]
+    "pages": [
+        "discloud", 
+        "api", 
+        "lib",
+        "faq"
+    ]
 }

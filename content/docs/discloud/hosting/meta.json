@@ -1,0 +1,16 @@
+{
+    "title": "Hospedagem",
+    "icon": "FaWifi",
+    "defaultOpen": true,
+    "pages": [
+        "discord-bot",
+        "web-api",
+        "---",
+        "dashboard",
+        "vscode",
+        "cli",
+        "api",
+        "---",
+        "langs"
+    ]
+}

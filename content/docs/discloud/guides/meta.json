@@ -1,0 +1,9 @@
+{
+    "title": "Guias",
+    "icon": "FaBookBookmark",
+    "defaultOpen": true,
+    "pages": [
+        "token", 
+        "local-env" 
+    ]
+}

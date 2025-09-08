@@ -1,0 +1,9 @@
+{
+    "title": "discloud.config",
+    "icon": "FaGear",
+    "pages": [
+        "apt",
+        "versions",
+        "networks"
+    ]
+}

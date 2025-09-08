@@ -1,0 +1,14 @@
+{
+    "title": "Ambiente local",
+    "icon": "FaComputer",
+    "pages": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "rust",
+        "ruby",
+        "php",
+        "go"
+    ]
+}

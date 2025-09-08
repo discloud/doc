@@ -1,4 +1,14 @@
 {
     "title": "Discloud",
-    "root": true
+    "root": true,
+    "pages": [
+        "index",
+        "discloud-config",
+        "---",
+        "hosting",
+        "config",
+        "---",
+        "guides",
+        "[FaQuestionCircle][FAQ](/docs/faq)"
+    ]
 }

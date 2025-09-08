@@ -1,0 +1,23 @@
+{
+    "title": "FAQ",
+    "root": true,
+    "icon": "FaQuestionCircle",
+    "pages": [
+        "index",
+        "---",
+        "project-root",
+        "env-file",
+        "main-file",
+        "bot-id",
+        "compact",
+        "commit",
+        "bot-large",
+        "modmail",
+        "website-issues",
+        "already-registered",
+        "app-logs",
+        "free-apps-shutdown",
+        "verify-discord",
+        "app-cluster"
+    ]
+}
