@@ -9,6 +9,8 @@
         "config",
         "---",
         "guides",
-        "[FaQuestionCircle][FAQ](/docs/faq)"
+        "[FaQuestionCircle][FAQ](/docs/faq)",
+        "[IoStatsChart][Status](https://status.discloudbot.com/)",
+        "[FaScroll][Termos de serviço (TOS)](https://discloud.com/legal)"
     ]
 }

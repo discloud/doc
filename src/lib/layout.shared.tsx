@@ -1,6 +1,7 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import Image from 'next/image';
 import { i18n } from './i18n';
+import { MdSpaceDashboard } from 'react-icons/md';
 
 /**
  * Shared layout configurations
@@ -27,7 +28,20 @@ export function baseOptions(_lang: string): BaseLayoutProps {
       ),
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [],
+    links: [
+      {
+        type: "button",
+        text: <span className="
+          flex items-center gap-2 py-1 px-2 rounded-md
+          bg-fd-foreground text-fd-background
+          hover:animate-pulse
+        ">
+          <MdSpaceDashboard className="inline"/>
+          Dashboard
+        </span>,
+        url: "https://discloud.com/dashboard"
+      }
+    ],
     
   };
 }
