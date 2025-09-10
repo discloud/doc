@@ -5,6 +5,7 @@ import { Card, Cards } from "fumadocs-ui/components/card";
 import { ClipboardCheck, LibraryBig, PersonStanding, Search } from "lucide-react";
 import { APIPage } from "fumadocs-openapi/ui";
 import { openapi } from "./lib/openapi";
+import { CodeBlock, Pre } from "./components/codeblock";
 
 const ICONS_MAP = {
   ClipboardCheck,
@@ -37,6 +38,11 @@ export function getMDXComponents(lang: "pt" | "en" = "pt", components?: MDXCompo
     Accordion: AccordionWithEmote,
     APIPage: (props) => <APIPage {...openapi[lang].getAPIPageProps(props)} />,
     Card, Cards,
+    pre: ({ ref: _ref, ...props }) => (
+      <CodeBlock {...props}>
+        <Pre>{props.children}</Pre>
+      </CodeBlock>
+    ),
     ...components,
   };
 }

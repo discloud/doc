@@ -3,6 +3,10 @@
 @import "fumadocs-ui/css/preset.css";
 @import "fumadocs-openapi/css/preset.css";
 
+pre code {
+	font-family: "JetBrains Mono";
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: #57f287 #0b0b0b;
