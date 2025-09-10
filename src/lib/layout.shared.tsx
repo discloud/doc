@@ -2,6 +2,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import Image from 'next/image';
 import { i18n } from './i18n';
 import { MdSpaceDashboard } from 'react-icons/md';
+import { DiscloudTitle } from '@/components/discloud/title';
 
 /**
  * Shared layout configurations
@@ -15,17 +16,7 @@ export function baseOptions(_lang: string): BaseLayoutProps {
     i18n,
     nav: {
       enabled: true,
-      title: (
-        <>
-          <Image
-            src="/discloud.png"
-            alt="discloud logo"
-            width={24}
-            height={24}
-          />
-          Discloud Docs
-        </>
-      ),
+      title: <DiscloudTitle />,
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
     links: [
